@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Contact List</title>
+        <link rel="stylesheet" href="Webdev2.css">
+        <script type="text/javascript" src="Webdev2.js"></script>
+        <script src="jquery.js"></script>
+    </head>
+    <body>
+        <h1>Contact List</h1>
+        <button class="open_prompt" onclick="open_popup_element('add_contact_popup')">+</button>
+        <table id="table">
+            <tbody>
+                <tr>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Email Address</th>
+                    <th>Contact #</th>
+                    <th>Update/Delete</th>
+                </tr>
+            </tbody>
+        </table>
+        <div id="add_contact_popup">
+            <h2>Create New Contact</h2>
+            <form onsubmit="return false">
+                <input type="text" placeholder="Last Name" id="last_name" required>
+                <input type="text" placeholder="First Name" id="first_name" required>
+                <input type="email" placeholder="Email Address" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" required>
+                <input type="text" placeholder="Contact" id="contact" pattern="[0-9]{11}" required>
+                <button type="submit" onclick="verify_information('add')">New Contact</button>
+            </form>
+        </div>
+        <div id="update_contact_popup">
+            <h2>Update Contact</h2>
+            <form onsubmit="return false">
+                <input type="text" placeholder="Last Name" id="last_name_update" required>
+                <input type="text" placeholder="First Name" id="first_name_update" required>
+                <input type="email" placeholder="Email Address" id="email_update" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$" required>
+                <input type="text" placeholder="Contact" id="contact_update" pattern="[0-9]{11}" required>
+                <button type="submit" onclick="verify_information('update')">Update</button>
+            </form>
+        </div>
+    </body>
+</html>
